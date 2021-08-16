@@ -9,9 +9,7 @@ def get_total(val):
   return float(str(val).replace("R$ ","").replace('.','').replace(',','.'))
 
 def get_ranking(gastos_dic):
-  ranking = []
-  for gasto in gastos_dic.keys():
-      ranking.append((float(gastos_dic[gasto]),gasto))
+  ranking = [(float(gastos_dic[gasto]),gasto) for gasto in gastos_dic]
   ranking.sort(reverse=True)
   return ranking
   
